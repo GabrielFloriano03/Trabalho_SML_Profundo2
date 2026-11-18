@@ -268,6 +268,9 @@ curva de perplexidade sai de `logs/pretrain.csv` e as curvas de loss são a imag
 do `plotar_curvas_de_loss.py`, então rodar as duas etapas na ordem mantém os slides em dia
 com os resultados.
 
+O PDF entregue (`Apresentacao_SLM_Projeto2.pdf`, item 6 do enunciado) é a
+exportação desse mesmo arquivo pelo PowerPoint.
+
 ## 5. Resultados
 
 Reproduzível com `avaliar_perplexidade_e_benchmarks.py`; resultados brutos em `logs/eval_*.json`.
