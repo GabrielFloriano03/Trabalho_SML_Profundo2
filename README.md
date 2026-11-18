@@ -463,9 +463,26 @@ com seus logs e amostras em `logs/*_v1.*`, para reproduzir a comparação.
 
 ## 6. Checkpoints
 
-Não versionados no git. O checkpoint final do SFT (obrigatório) e os de
-pré-treino e mid-training são publicados no HuggingFace Hub / Google Drive —
-link nesta seção na entrega.
+Não versionados no git — ficam no HuggingFace Hub:
+
+**https://huggingface.co/Floriano03/Trabalho_SML_Profundo2**
+
+| Arquivo | Etapa | Tamanho |
+|---|---|---|
+| `pretrain_final.pt` | pré-treino | 211 MB |
+| `midtrain_final.pt` | mid-training | 211 MB |
+| `sft_final.pt` | **SFT — o modelo final** | 211 MB |
+
+Cada arquivo guarda só `model` e `config`. O estado do otimizador fica de fora —
+é o que torna os `_best`/`_last` locais três vezes maiores, e ele não serve nem
+para avaliar nem para a demo.
+
+Para baixar os três para `checkpoints/`, que é onde `evaluate.py`, `generate.py`
+e a demo procuram:
+
+```bash
+.venv\Scripts\python.exe -c "from huggingface_hub import hf_hub_download as d; [d('Floriano03/Trabalho_SML_Profundo2', f, local_dir='checkpoints') for f in ['pretrain_final.pt','midtrain_final.pt','sft_final.pt']]"
+```
 
 ## 7. Créditos
 
