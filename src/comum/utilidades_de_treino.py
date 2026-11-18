@@ -10,7 +10,7 @@ import time
 
 import torch
 
-from model import SLM, SLMConfig
+from arquitetura_modelo import SLM, SLMConfig
 
 
 # --------------------------------------------------------------------------- #

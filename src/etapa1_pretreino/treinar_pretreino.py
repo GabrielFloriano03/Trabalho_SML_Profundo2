@@ -4,23 +4,28 @@ Uma GPU, bf16 com autocast, gradient accumulation para atingir o batch global
 alvo mesmo com 6 GB de VRAM, e checkpoints retomaveis.
 
 Uso tipico:
-    python src/pretrain.py                   # usa os defaults abaixo
-    python src/pretrain.py --resume          # continua de checkpoints/pretrain_last.pt
-    python src/pretrain.py --max-hours 6     # para de forma limpa depois de 6h
+    python src/etapa1_pretreino/treinar_pretreino.py                   # usa os defaults abaixo
+    python src/etapa1_pretreino/treinar_pretreino.py --resume          # continua de checkpoints/pretrain_last.pt
+    python src/etapa1_pretreino/treinar_pretreino.py --max-hours 6     # para de forma limpa depois de 6h
 """
 
 from __future__ import annotations
 
 import argparse
 import os
+import sys
 import time
+from pathlib import Path
 
 import torch
 
-from data import ShardLoader, ValLoader
-from model import SLM, SLMConfig
-from train_utils import (CSVLogger, evaluate, fmt_time, get_lr, human,
-                         save_checkpoint, save_run_meta)
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from arquitetura_modelo import SLM, SLMConfig
+from carregadores_de_dados import ShardLoader, ValLoader
+from utilidades_de_treino import (CSVLogger, evaluate, fmt_time, get_lr, human,
+                                  save_checkpoint, save_run_meta)
 
 
 def parse_args():

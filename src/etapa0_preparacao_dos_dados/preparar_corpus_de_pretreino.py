@@ -8,7 +8,7 @@ Os primeiros --val-tokens tokens viram o split de validacao (val.npy) e nunca
 entram no treino -- e sobre ele que a perplexidade e reportada.
 
 Uso:
-    python src/prepare_pretrain.py --target-tokens 1.1e9
+    python src/etapa0_preparacao_dos_dados/preparar_corpus_de_pretreino.py --target-tokens 1.1e9
 
 Estrategia de shards inspirada em build-nanoGPT (Karpathy, MIT).
 """

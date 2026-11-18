@@ -13,9 +13,9 @@ numero de caracteres da alternativa), que e o padrao em HellaSwag/ARC e corrige
 o vies a favor de alternativas curtas.
 
 Uso:
-    python src/evaluate.py --ckpt checkpoints/sft_final.pt
-    python src/evaluate.py --ckpt checkpoints/pretrain_final.pt --tasks hellaswag,arc_easy
-    python src/evaluate.py --ckpt ... --limit 500       # execucao rapida
+    python src/etapa4_avaliacao/avaliar_perplexidade_e_benchmarks.py --ckpt checkpoints/sft_final.pt
+    python src/etapa4_avaliacao/avaliar_perplexidade_e_benchmarks.py --ckpt checkpoints/pretrain_final.pt --tasks hellaswag,arc_easy
+    python src/etapa4_avaliacao/avaliar_perplexidade_e_benchmarks.py --ckpt ... --limit 500       # execucao rapida
 """
 
 from __future__ import annotations
@@ -25,14 +25,19 @@ import json
 import math
 import os
 import re
+import sys
+from pathlib import Path
 
 import torch
 import torch.nn.functional as F
 from datasets import load_dataset
 
 import tiktoken
-from data import ValLoader
-from train_utils import load_model_from_checkpoint
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from carregadores_de_dados import ValLoader
+from utilidades_de_treino import load_model_from_checkpoint
 
 ENC = tiktoken.get_encoding("gpt2")
 

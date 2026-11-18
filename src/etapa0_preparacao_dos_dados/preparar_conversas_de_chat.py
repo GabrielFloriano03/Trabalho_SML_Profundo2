@@ -8,8 +8,8 @@ Saida em --out:
     val.npy        / val_mask.npy
 
 Uso:
-    python src/prepare_chat.py --out data/midtrain --max-tokens 150e6
-    python src/prepare_chat.py --out data/sft      --max-tokens 40e6
+    python src/etapa0_preparacao_dos_dados/preparar_conversas_de_chat.py --out data/midtrain --max-tokens 150e6
+    python src/etapa0_preparacao_dos_dados/preparar_conversas_de_chat.py --out data/sft      --max-tokens 40e6
 """
 
 from __future__ import annotations
@@ -17,12 +17,17 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import sys
 import time
+from pathlib import Path
 
 import numpy as np
 from datasets import load_dataset
 
-from chat_format import encode_conversation
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from template_de_chat import encode_conversation
 
 
 def human(n: float) -> str:

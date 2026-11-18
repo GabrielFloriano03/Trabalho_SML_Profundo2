@@ -1,14 +1,14 @@
 """Gera a apresentacao do Projeto 2 (SLM) a partir dos resultados em logs/.
 
 A curva de perplexidade do slide 4 e lida de `logs/pretrain.csv` e as curvas de
-loss sao a imagem gerada por `plot_curves.py`. Os demais numeros estao escritos
+loss sao a imagem gerada por `plotar_curvas_de_loss.py`. Os demais numeros estao escritos
 aqui, conferidos contra `logs/eval_*.json` e os CSVs — nenhum e estimado.
 
 Depende de `python-pptx`, que nao faz parte do pipeline de treino.
 
 Uso (a partir da raiz do projeto):
-    python src/build_deck.py
-    python src/build_deck.py --out outro_nome.pptx
+    python src/ferramentas/gerar_slides_da_apresentacao.py
+    python src/ferramentas/gerar_slides_da_apresentacao.py --out outro.pptx
 """
 from __future__ import annotations
 
@@ -435,7 +435,7 @@ for i, cor in enumerate(cores):
     pt.format.fill.solid()
     pt.format.fill.fore_color.rgb = cor
 tb(s, cx + 0.1, cy + chei - 0.05, cwid - 0.2, 0.3,
-   [{"t": "throughput medido  ×  micro-batch   (src/bench.py)",
+   [{"t": "throughput medido  ×  micro-batch   (medir_throughput_da_gpu.py)",
      "sz": 10.5, "c": MUTED, "align": PP_ALIGN.CENTER}])
 
 card(s, M, CONTENT_Y, 4.25, 2.0)
@@ -533,7 +533,7 @@ dw, dh = iw * scale, ih * scale
 s.shapes.add_picture(str(img), Inches(M + (W - dw) / 2), Inches(CONTENT_Y - 0.05),
                      Inches(dw), Inches(dh))
 tb(s, M, 6.45, W, 0.85, [
-    {"t": "Gerado por src/plot_curves.py a partir dos CSVs de cada etapa. A loss de "
+    {"t": "Gerado por plotar_curvas_de_loss.py a partir dos CSVs de cada etapa. A loss de "
           "treino do pré-treino cai de 10,91 — exatamente ln(50304) = 10,83, o que valida "
           "a inicialização — até 3,55. Mid-training e SFT partem de valores muito mais "
           "baixos porque herdam os pesos da etapa anterior.",
@@ -594,7 +594,7 @@ title(s, "O custo medido da especialização")
 
 cd = CategoryChartData()
 cd.categories = ["Após pré-treino", "Após mid-training", "Após SFT"]
-# os tres valores vem da mesma execucao de evaluate.py, para serem comparaveis
+# os tres valores vem da mesma execucao do script de avaliacao, comparaveis entre si
 cd.add_series("PPL FineWeb-Edu", (36.53, 51.30, 54.30))
 cx, cy, cwid, chei = M, CONTENT_Y, 6.0, 3.9
 gf = s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,
@@ -617,7 +617,7 @@ for i, cor in enumerate([TEAL, RGBColor(0xC8, 0x6A, 0x3C), BRICK]):
     pt.format.fill.fore_color.rgb = cor
 tb(s, cx + 0.1, cy + chei - 0.05, cwid - 0.2, 0.3,
    [{"t": "perplexidade em texto geral (FineWeb-Edu), pelos três checkpoints  ·  "
-          "src/evaluate.py",
+          "avaliar_perplexidade_e_benchmarks.py",
      "sz": 10.5, "c": MUTED, "align": PP_ALIGN.CENTER}])
 
 x2 = M + 6.0 + 0.55
@@ -685,7 +685,7 @@ for i, (num, h, code, d) in enumerate(falhas):
     tb(s, x + 0.3, 3.42, wd - 0.6, 0.95, [{"t": d, "sz": 12, "c": MUTED, "line": 1.22}])
 
 tb(s, M, 4.68, W, 0.3, [
-    {"t": "Verificação na saída do modelo  ·  src/check_leak.py", "sz": 14, "b": True,
+    {"t": "Verificação na saída do modelo  ·  verificar_vazamento_do_gsm8k.py", "sz": 14, "b": True,
      "font": HEAD}])
 tb(s, M, 5.0, W, 0.3, [
     {"t": "Comparar os dados não basta: o que importa é se o modelo ainda emite os "
@@ -722,7 +722,7 @@ chip(s, M + 0.35, CONTENT_Y + 0.3, 0.42, "▶")
 tb(s, M + 0.35, CONTENT_Y + 0.9, 4.6 - 0.7, 0.4,
    [{"t": "Demo em modo chat", "sz": 18, "b": True, "font": HEAD}])
 tb(s, M + 0.35, CONTENT_Y + 1.34, 4.6 - 0.7, 0.35,
-   [{"t": "streamlit run src/chat_app.py", "sz": 11.5, "font": MONO, "c": AMBER}])
+   [{"t": "streamlit run src/etapa5_demo/portal_de_chat.py", "sz": 11.5, "font": MONO, "c": AMBER}])
 tb(s, M + 0.35, CONTENT_Y + 1.8, 4.6 - 0.7, 2.4, [
     {"t": "Carrega o checkpoint final do SFT, como pede o enunciado, e expõe:",
      "sz": 12.5, "c": MUTED, "line": 1.2, "space_after": 9},

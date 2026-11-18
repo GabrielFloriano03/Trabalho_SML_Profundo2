@@ -15,10 +15,10 @@ import time
 
 import torch
 
-from data import ShardLoader, ValLoader
-from train_utils import (CSVLogger, evaluate, fmt_time, get_lr, human,
-                         load_model_from_checkpoint, save_checkpoint,
-                         save_run_meta)
+from carregadores_de_dados import ShardLoader, ValLoader
+from utilidades_de_treino import (CSVLogger, evaluate, fmt_time, get_lr, human,
+                                  load_model_from_checkpoint, save_checkpoint,
+                                  save_run_meta)
 
 
 def run_stage(args, stage: str, use_loss_mask: bool):

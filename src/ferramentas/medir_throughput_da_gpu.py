@@ -1,18 +1,23 @@
 """Mede throughput (tokens/s) e pico de VRAM para dimensionar o cronograma.
 
 Uso:
-    python src/bench.py                 # varre micro-batches
-    python src/bench.py --smoke         # smoke test: overfitar um mini-batch
+    python src/ferramentas/medir_throughput_da_gpu.py                 # varre micro-batches
+    python src/ferramentas/medir_throughput_da_gpu.py --smoke         # smoke test: overfitar um mini-batch
 """
 
 from __future__ import annotations
 
 import argparse
+import sys
 import time
+from pathlib import Path
 
 import torch
 
-from model import SLM, SLMConfig
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from arquitetura_modelo import SLM, SLMConfig
 
 
 def human(n: int) -> str:

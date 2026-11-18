@@ -8,7 +8,7 @@ A lista de checkpoints tem uma entrada por etapa do treino (pre-treino,
 mid-training e SFT final), para comparar as tres ao vivo com a mesma pergunta.
 
 Uso:
-    streamlit run src/chat_app.py
+    streamlit run src/etapa5_demo/portal_de_chat.py
 
 O tema vem de .streamlit/config.toml; o resto do visual e o CSS em ESTILO.
 """
@@ -19,16 +19,19 @@ import html
 import os
 import sys
 import time
+from pathlib import Path
 
 import streamlit as st
 import streamlit.components.v1 as components
 import tiktoken
 import torch
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from chat_format import build_prompt          # noqa: E402
-from train_utils import load_model_from_checkpoint  # noqa: E402
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from template_de_chat import build_prompt          # noqa: E402
+from utilidades_de_treino import load_model_from_checkpoint  # noqa: E402
 
 ENC = tiktoken.get_encoding("gpt2")
 

@@ -1,8 +1,8 @@
 """Gera os graficos das curvas de loss das tres etapas (item 3 da entrega).
 
 Uso:
-    python src/plot_curves.py
-    python src/plot_curves.py --x tokens --out logs/curvas.png
+    python src/ferramentas/plotar_curvas_de_loss.py
+    python src/ferramentas/plotar_curvas_de_loss.py --x tokens --out logs/curvas.png
 """
 
 from __future__ import annotations

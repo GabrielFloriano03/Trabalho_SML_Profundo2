@@ -14,10 +14,12 @@ codigo do SmolTalk contem `std::cout << ... >>` legitimamente, e um padrao
 largo casaria com elas.
 
 Uso (a partir da raiz do projeto):
-    python src/check_leak.py
+    python src/etapa4_avaliacao/verificar_vazamento_do_gsm8k.py
 """
 
 from __future__ import annotations
+
+from pathlib import Path
 
 import json
 import os
@@ -27,10 +29,12 @@ import sys
 import tiktoken
 import torch
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from chat_format import build_prompt  # noqa: E402
-from train_utils import load_model_from_checkpoint  # noqa: E402
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from template_de_chat import build_prompt  # noqa: E402
+from utilidades_de_treino import load_model_from_checkpoint  # noqa: E402
 
 ENC = tiktoken.get_encoding("gpt2")
 CALC = re.compile(r"<<[\d\s()+*/.,=-]+>>")

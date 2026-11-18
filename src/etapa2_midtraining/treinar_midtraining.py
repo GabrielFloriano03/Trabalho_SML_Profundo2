@@ -5,15 +5,20 @@ em dados conversacionais e de raciocinio, com LR menor e warmup curto.
 A loss cobre TODOS os tokens -- a mascara so entra no SFT.
 
 Uso:
-    python src/midtrain.py
-    python src/midtrain.py --resume
+    python src/etapa2_midtraining/treinar_midtraining.py
+    python src/etapa2_midtraining/treinar_midtraining.py --resume
 """
 
 from __future__ import annotations
 
 import argparse
+import sys
+from pathlib import Path
 
-from finetune_core import add_common_args, run_stage
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from loop_de_finetuning import add_common_args, run_stage
 
 
 def main():

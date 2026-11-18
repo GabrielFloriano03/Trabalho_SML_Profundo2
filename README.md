@@ -67,7 +67,8 @@ compromisso. O custo foi medido antes de iniciar, e não estimado:
 1.1 B / 48.8 M        ≈ 22.6 h de pré-treino
 ```
 
-O micro-batch foi escolhido por medição (`python src/bench.py`):
+O micro-batch foi escolhido por medição
+(`python src/ferramentas/medir_throughput_da_gpu.py`):
 
 | micro-batch | tokens/s | pico VRAM |
 |---|---|---|
@@ -86,28 +87,50 @@ tokens por passo de otimização.
 
 ## 3. Estrutura do repositório
 
+Uma pasta por etapa do projeto, na ordem em que são executadas. Os scripts são
+sempre rodados **a partir da raiz do repositório**, porque todos os caminhos
+(`data/`, `checkpoints/`, `logs/`) são relativos a ela.
+
 ```
 src/
-  model.py              arquitetura (RoPE, GQA, SwiGLU, RMSNorm, KV-cache)
-  chat_format.py        template de chat e máscara de loss
-  data.py               leitura dos shards, retomável
-  train_utils.py        schedules de LR, checkpoints, logging, avaliação
-  prepare_pretrain.py   etapa 0a: FineWeb-Edu → shards uint16
-  prepare_chat.py       etapa 0b: SmolTalk + GSM8K → shards com máscara
-  pretrain.py           etapa 1
-  midtrain.py           etapa 2
-  sft.py                etapa 3
-  finetune_core.py      loop compartilhado por mid-training e SFT
-  evaluate.py           etapa 4: perplexidade + benchmarks por log-likelihood
-  generate.py           amostras de texto (completamento e chat)
-  plot_curves.py        gráficos das curvas de loss
-  check_leak.py         verifica o vazamento de artefatos do GSM8K na saída
-  chat_app.py           portal de chat (Streamlit) para a demo ao vivo
-  bench.py              throughput e smoke test
-  build_deck.py         slides da apresentação, a partir de logs/
+│
+├── etapa0_preparacao_dos_dados/
+│     preparar_corpus_de_pretreino.py      FineWeb-Edu → shards uint16 + split de validação
+│     preparar_conversas_de_chat.py        SmolTalk + GSM8K → shards com máscara de loss
+│
+├── etapa1_pretreino/
+│     treinar_pretreino.py                 1,10 B tokens de texto geral, do zero
+│
+├── etapa2_midtraining/
+│     treinar_midtraining.py               150 M tokens: aprende o formato de diálogo
+│
+├── etapa3_sft/
+│     treinar_sft.py                       90 M tokens com loss mask: refina a resposta
+│
+├── etapa4_avaliacao/
+│     avaliar_perplexidade_e_benchmarks.py perplexidade + 5 benchmarks por log-verossimilhança
+│     gerar_amostras_de_texto.py           completamento (pré-treino) e chat (pós-SFT)
+│     verificar_vazamento_do_gsm8k.py      procura artefatos do GSM8K na saída do modelo
+│
+├── etapa5_demo/
+│     portal_de_chat.py                    portal Streamlit para a demonstração ao vivo
+│
+├── comum/                                 compartilhado entre as etapas
+│     arquitetura_modelo.py                RoPE, GQA, SwiGLU, RMSNorm, KV-cache, geração
+│     template_de_chat.py                  template de chat e máscara de loss
+│     carregadores_de_dados.py             leitura dos shards, retomável
+│     utilidades_de_treino.py              schedule de LR, checkpoints, logging, avaliação
+│     loop_de_finetuning.py                loop compartilhado por mid-training e SFT
+│
+└── ferramentas/                           apoio, fora do pipeline
+      medir_throughput_da_gpu.py           escolhe o micro-batch por medição
+      plotar_curvas_de_loss.py             gráfico das curvas das três etapas
+      gerar_slides_da_apresentacao.py      slides .pptx a partir de logs/
+
 .streamlit/             tema do portal de chat
 logs/                   CSVs das curvas, gráficos e resultados de avaliação
-checkpoints/            checkpoints (fora do git — ver seção 6)
+checkpoints/            pesos treinados (fora do git — ver seção 6)
+data/                   shards tokenizados (fora do git — gerados na etapa 0)
 ```
 
 ## 4. Como reproduzir
@@ -123,7 +146,7 @@ py -3.13 -m venv .venv
 Verificação do pipeline antes de qualquer treino longo:
 
 ```bash
-.venv\Scripts\python.exe src\bench.py --smoke
+.venv\Scripts\python.exe src\ferramentas\medir_throughput_da_gpu.py --smoke
 ```
 
 O smoke test confirma que o modelo consegue overfittar um mini-batch
@@ -133,12 +156,12 @@ inicialização.
 ### Etapa 0 — dados
 
 ```bash
-.venv\Scripts\python.exe src\prepare_pretrain.py --out data\pretrain --target-tokens 1.15e9
+.venv\Scripts\python.exe src\etapa0_preparacao_dos_dados\preparar_corpus_de_pretreino.py --out data\pretrain --target-tokens 1.15e9
 
-.venv\Scripts\python.exe src\prepare_chat.py --out data\midtrain ^
+.venv\Scripts\python.exe src\etapa0_preparacao_dos_dados\preparar_conversas_de_chat.py --out data\midtrain ^
     --smoltalk-config all --max-tokens 160e6 --val-tokens 2e6
 
-.venv\Scripts\python.exe src\prepare_chat.py --out data\sft ^
+.venv\Scripts\python.exe src\etapa0_preparacao_dos_dados\preparar_conversas_de_chat.py --out data\sft ^
     --smoltalk-config smol-magpie-ultra,everyday-conversations ^
     --smoltalk-weight 8 --gsm8k-weight 1 --max-tokens 45e6 --val-tokens 1.5e6
 ```
@@ -166,14 +189,14 @@ que a demo de chat mais exercita. O GSM8K entra nas duas etapas, na proporção 
 ### Etapa 1 — pré-treino
 
 ```bash
-.venv\Scripts\python.exe src\pretrain.py
+.venv\Scripts\python.exe src\etapa1_pretreino\treinar_pretreino.py
 ```
 
 Para dividir em blocos (o treino todo leva ~23 h):
 
 ```bash
-.venv\Scripts\python.exe src\pretrain.py --max-hours 6
-.venv\Scripts\python.exe src\pretrain.py --max-hours 6 --resume
+.venv\Scripts\python.exe src\etapa1_pretreino\treinar_pretreino.py --max-hours 6
+.venv\Scripts\python.exe src\etapa1_pretreino\treinar_pretreino.py --max-hours 6 --resume
 ```
 
 O `--resume` restaura pesos, estado do AdamW, step, contagem de tokens **e a
@@ -182,7 +205,7 @@ posição exata no stream de dados**, então nenhum token é visto duas vezes.
 ### Etapa 2 — mid-training
 
 ```bash
-.venv\Scripts\python.exe src\midtrain.py
+.venv\Scripts\python.exe src\etapa2_midtraining\treinar_midtraining.py
 ```
 
 Inicializa de `checkpoints/pretrain_final.pt` (só os pesos, sem estado do
@@ -192,7 +215,7 @@ já no template de chat com sequence packing. A loss cobre todos os tokens.
 ### Etapa 3 — SFT
 
 ```bash
-.venv\Scripts\python.exe src\sft.py --epochs 2
+.venv\Scripts\python.exe src\etapa3_sft\treinar_sft.py --epochs 2
 ```
 
 Inicializa do mid-training, LR 2e-5. Aqui entra a **loss mask**: os tokens de
@@ -202,9 +225,9 @@ tokens da resposta do assistente contribuem para o gradiente.
 ### Etapa 4 — avaliação
 
 ```bash
-.venv\Scripts\python.exe src\evaluate.py --ckpt checkpoints\pretrain_final.pt
-.venv\Scripts\python.exe src\evaluate.py --ckpt checkpoints\sft_final.pt
-.venv\Scripts\python.exe src\plot_curves.py
+.venv\Scripts\python.exe src\etapa4_avaliacao\avaliar_perplexidade_e_benchmarks.py --ckpt checkpoints\pretrain_final.pt
+.venv\Scripts\python.exe src\etapa4_avaliacao\avaliar_perplexidade_e_benchmarks.py --ckpt checkpoints\sft_final.pt
+.venv\Scripts\python.exe src\ferramentas\plotar_curvas_de_loss.py
 ```
 
 Reporta perplexidade no split de validação do FineWeb-Edu e acurácia em
@@ -217,7 +240,7 @@ favor de respostas curtas).
 ### Demo em modo chat
 
 ```bash
-.venv\Scripts\streamlit.exe run src\chat_app.py
+.venv\Scripts\streamlit.exe run src\etapa5_demo\portal_de_chat.py
 ```
 
 Portal de conversa para a apresentação ao vivo. Carrega o checkpoint final do
@@ -237,17 +260,17 @@ precisam ser em inglês. O tema da página está em `.streamlit/config.toml`.
 ### Slides da apresentação
 
 ```bash
-.venv\Scripts\python.exe src\build_deck.py
+.venv\Scripts\python.exe src\ferramentas\gerar_slides_da_apresentacao.py
 ```
 
 Gera `Apresentacao_SLM_Projeto2.pptx` (12 slides, com notas do apresentador). A
 curva de perplexidade sai de `logs/pretrain.csv` e as curvas de loss são a imagem
-do `plot_curves.py`, então rodar as duas etapas na ordem mantém os slides em dia
+do `plotar_curvas_de_loss.py`, então rodar as duas etapas na ordem mantém os slides em dia
 com os resultados.
 
 ## 5. Resultados
 
-Reproduzível com `evaluate.py`; resultados brutos em `logs/eval_*.json`.
+Reproduzível com `avaliar_perplexidade_e_benchmarks.py`; resultados brutos em `logs/eval_*.json`.
 
 ### Treino
 
@@ -261,9 +284,9 @@ Reproduzível com `evaluate.py`; resultados brutos em `logs/eval_*.json`.
 > etapa (`logs/*.csv`), e é por isso que o pré-treino aparece com 34,78 aqui e com
 > 36,5 nas tabelas seguintes: a avaliação durante o treino percorre só um
 > subconjunto do split (`--eval-batches`, 40 no pré-treino e 30 nas etapas
-> seguintes, para não roubar tempo de GPU), enquanto `evaluate.py` percorre o
+> seguintes, para não roubar tempo de GPU), enquanto `avaliar_perplexidade_e_benchmarks.py` percorre o
 > split inteiro. É a mesma medida em amostras de tamanhos diferentes. Daqui em
-> diante, toda perplexidade de texto geral vem de `evaluate.py`, para que os
+> diante, toda perplexidade de texto geral vem de `avaliar_perplexidade_e_benchmarks.py`, para que os
 > números sejam comparáveis entre si.
 
 ### Benchmarks de múltipla escolha (log-verossimilhança)
@@ -318,7 +341,7 @@ aderência ao formato de diálogo.
 | Conversacional | — | **6,90** | **6,97** |
 | FineWeb-Edu (texto geral) | **36,53** | **51,30** | **54,30** |
 
-A linha do FineWeb-Edu vem toda de `evaluate.py`, para que as três colunas sejam
+A linha do FineWeb-Edu vem toda de `avaliar_perplexidade_e_benchmarks.py`, para que as três colunas sejam
 comparáveis entre si. A linha conversacional só existe durante o treino (é o
 split de validação de cada etapa), e vem de `logs/midtrain.csv` e `logs/sft.csv`.
 
@@ -358,11 +381,11 @@ treino sem aumentar o modelo renderia pouco; o ganho viria de mais parâmetros.
 
 Treino executado em 19h50 numa RTX (6 GB), throughput médio de 15,4K tokens/s.
 
-Curvas de loss: `logs/curvas_loss.png` (gerado por `plot_curves.py`).
+Curvas de loss: `logs/curvas_loss.png` (gerado por `plotar_curvas_de_loss.py`).
 
 ### Demonstrações de geração
 
-Amostras completas em `logs/samples_*.json`, geradas com `generate.py`
+Amostras completas em `logs/samples_*.json`, geradas com `gerar_amostras_de_texto.py`
 (T=0,8, top-k=50).
 
 **Antes vs. depois do SFT** (mesma pergunta, `midtrain_final` vs `sft_final`):
@@ -426,7 +449,7 @@ Nenhum dos dois problemas invalidava os resultados de perplexidade ou dos
 benchmarks de múltipla escolha, que não dependem de geração autoregressiva —
 afetavam a qualidade qualitativa das respostas e a demo.
 
-**Verificação na saída do modelo** (`src/check_leak.py`). Comparar os dados não
+**Verificação na saída do modelo** (`src/etapa4_avaliacao/verificar_vazamento_do_gsm8k.py`). Comparar os dados não
 basta: o que importa é se o modelo ainda emite os artefatos. O script gera 32
 respostas por checkpoint (8 prompts aritméticos × 4 amostras, porque a geração é
 estocástica e uma amostra limpa não prova ausência) e conta as ocorrências:
@@ -477,7 +500,7 @@ Cada arquivo guarda só `model` e `config`. O estado do otimizador fica de fora 
 é o que torna os `_best`/`_last` locais três vezes maiores, e ele não serve nem
 para avaliar nem para a demo.
 
-Para baixar os três para `checkpoints/`, que é onde `evaluate.py`, `generate.py`
+Para baixar os três para `checkpoints/`, que é onde `avaliar_perplexidade_e_benchmarks.py`, `gerar_amostras_de_texto.py`
 e a demo procuram:
 
 ```bash

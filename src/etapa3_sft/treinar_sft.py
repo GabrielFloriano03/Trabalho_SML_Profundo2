@@ -6,15 +6,20 @@ como -100 e sao ignorados pela cross-entropy. LR menor ainda que no
 mid-training, 1 a 2 epocas, monitorando overfitting pela val loss.
 
 Uso:
-    python src/sft.py
-    python src/sft.py --epochs 2 --resume
+    python src/etapa3_sft/treinar_sft.py
+    python src/etapa3_sft/treinar_sft.py --epochs 2 --resume
 """
 
 from __future__ import annotations
 
 import argparse
+import sys
+from pathlib import Path
 
-from finetune_core import add_common_args, run_stage
+# os modulos compartilhados entre as etapas ficam em src/comum/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comum"))
+
+from loop_de_finetuning import add_common_args, run_stage
 
 
 def main():
