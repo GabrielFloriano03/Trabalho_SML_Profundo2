@@ -807,10 +807,20 @@ tb(s, M + 0.4, 5.06, W - 0.8, 1.1, [
      "sz": 13, "c": WHITE, "line": 1.25},
 ])
 
-tb(s, M, 6.62, W, 0.4, [
-    {"t": "Código, curvas e resultados reproduzíveis  ·  README com o comando de cada "
-          "etapa  ·  Gabriel Floriano  ·  PUCRS",
-     "sz": 11, "c": MUTED_DK}])
+# os dois links da entrega ficam no slide final, que e o que permanece na tela
+# durante as perguntas
+tb(s, M, 6.5, W, 0.55, [
+    {"runs": [
+        {"t": "Código  ", "sz": 10.5, "c": MUTED_DK},
+        {"t": "github.com/GabrielFloriano03/Trabalho_SML_Profundo2",
+         "sz": 10.5, "c": AMBER_LT, "font": MONO},
+        {"t": "     Checkpoints  ", "sz": 10.5, "c": MUTED_DK},
+        {"t": "huggingface.co/Floriano03/Trabalho_SML_Profundo2",
+         "sz": 10.5, "c": AMBER_LT, "font": MONO},
+    ]},
+    {"t": "Gabriel Floriano  ·  Aprendizado Profundo 2  ·  PUCRS",
+     "sz": 10, "c": MUTED_DK, "space_before": 4},
+])
 s.notes_slide.notes_text_frame.text = (
     "Fecho com a limitacao, nao com o resultado. O numero que resume o projeto nao e uma "
     "acuracia: e o 3,3% de ganho nos ultimos 200 M tokens, que diz com clareza que o "

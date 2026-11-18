@@ -6,6 +6,12 @@ treinado em uma única GPU de notebook.
 
 | | |
 |---|---|
+| Repositório | https://github.com/GabrielFloriano03/Trabalho_SML_Profundo2 |
+| Checkpoints | https://huggingface.co/Floriano03/Trabalho_SML_Profundo2 |
+| Slides | [`Apresentacao_SLM_Projeto2.pdf`](Apresentacao_SLM_Projeto2.pdf) |
+
+| | |
+|---|---|
 | Parâmetros treináveis | **55.26 M** (29.50 M não-embedding) |
 | Arquitetura | decoder-only estilo LLaMA: RoPE · GQA · SwiGLU · RMSNorm · Flash Attention |
 | Tokenizer | BPE do GPT-2 (`tiktoken`), vocab 50257 (padding até 50304) |
