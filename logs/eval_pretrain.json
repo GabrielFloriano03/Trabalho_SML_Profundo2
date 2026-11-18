@@ -1,0 +1,36 @@
+{
+  "checkpoint": "checkpoints\\pretrain_final.pt",
+  "params": 55257600,
+  "val_loss": 3.5982,
+  "perplexity": 36.533,
+  "hellaswag": {
+    "n": 10042,
+    "acc": 0.26638119896434975,
+    "acc_norm": 0.26628161720772753,
+    "random_baseline": 0.25
+  },
+  "arc_easy": {
+    "n": 2376,
+    "acc": 0.4276094276094276,
+    "acc_norm": 0.39941077441077444,
+    "random_baseline": 0.25
+  },
+  "arc_challenge": {
+    "n": 1172,
+    "acc": 0.18600682593856654,
+    "acc_norm": 0.2235494880546075,
+    "random_baseline": 0.25
+  },
+  "piqa": {
+    "n": 1838,
+    "acc": 0.5865070729053319,
+    "acc_norm": 0.5810663764961915,
+    "random_baseline": 0.5
+  },
+  "winogrande": {
+    "n": 1267,
+    "acc": 0.5209155485398579,
+    "acc_norm": 0.5209155485398579,
+    "random_baseline": 0.5
+  }
+}

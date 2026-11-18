@@ -1,0 +1,36 @@
+{
+  "checkpoint": "checkpoints\\sft_final.pt",
+  "params": 55257600,
+  "val_loss": 3.99455,
+  "perplexity": 54.302,
+  "hellaswag": {
+    "n": 10042,
+    "acc": 0.26707827126070505,
+    "acc_norm": 0.2720573590918144,
+    "random_baseline": 0.25
+  },
+  "arc_easy": {
+    "n": 2376,
+    "acc": 0.3926767676767677,
+    "acc_norm": 0.3707912457912458,
+    "random_baseline": 0.25
+  },
+  "arc_challenge": {
+    "n": 1172,
+    "acc": 0.19027303754266212,
+    "acc_norm": 0.2295221843003413,
+    "random_baseline": 0.25
+  },
+  "piqa": {
+    "n": 1838,
+    "acc": 0.5729053318824809,
+    "acc_norm": 0.5729053318824809,
+    "random_baseline": 0.5
+  },
+  "winogrande": {
+    "n": 1267,
+    "acc": 0.5295974743488555,
+    "acc_norm": 0.5295974743488555,
+    "random_baseline": 0.5
+  }
+}

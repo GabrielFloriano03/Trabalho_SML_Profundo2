@@ -1,0 +1,36 @@
+{
+  "checkpoint": "checkpoints\\midtrain_final.pt",
+  "params": 55257600,
+  "val_loss": 3.93764,
+  "perplexity": 51.298,
+  "hellaswag": {
+    "n": 10042,
+    "acc": 0.2664807807209719,
+    "acc_norm": 0.26946823341963755,
+    "random_baseline": 0.25
+  },
+  "arc_easy": {
+    "n": 2376,
+    "acc": 0.38047138047138046,
+    "acc_norm": 0.3661616161616162,
+    "random_baseline": 0.25
+  },
+  "arc_challenge": {
+    "n": 1172,
+    "acc": 0.189419795221843,
+    "acc_norm": 0.22781569965870307,
+    "random_baseline": 0.25
+  },
+  "piqa": {
+    "n": 1838,
+    "acc": 0.5756256800870512,
+    "acc_norm": 0.5729053318824809,
+    "random_baseline": 0.5
+  },
+  "winogrande": {
+    "n": 1267,
+    "acc": 0.5374901341752171,
+    "acc_norm": 0.5374901341752171,
+    "random_baseline": 0.5
+  }
+}

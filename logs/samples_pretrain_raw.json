@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints\\pretrain_final.pt",
+  "samples": [
+    {
+      "mode": "raw",
+      "prompt": "The capital of France is",
+      "completion": "the eastern half of Spain.\nSaint Louis, for example, is the capital of the Netherlands. The eastern part of Saint Louis is called the northern part of Saint Louis. The northern part is called the southern part of Saint Louis.\nSaint Louis is the capital of the region.\nThe capital of Saint Louis is Louis. The city of Saint Louis is called Saint Louis. The city of Saint"
+    },
+    {
+      "mode": "raw",
+      "prompt": "Photosynthesis is the process by which",
+      "completion": "plants form a substance which is the building material for the creation of new plant material.\nIt is an essential part of our growing system. To produce food and water efficiently, we need to turn it into the food we eat and drink. To become a new plant material and to be replaced by a new plant material, we need to turn it into something else.\nTo make a new plant material"
+    },
+    {
+      "mode": "raw",
+      "prompt": "In mathematics, a prime number is",
+      "completion": "a constant of length, which is the term for the number of times, a constant of length, which can be translated as the sum of the length of the variable. When a prime number is used, the term's function, which makes sense, can be defined as the number of times a prime number is subtracted from the sum of the prime numbers, which is the number of times it represents"
+    },
+    {
+      "mode": "raw",
+      "prompt": "The water cycle describes how",
+      "completion": "the soil temperature, water supply, and water supply increase. Water supply in the groundwater flows, and water supply in the watersheds. Water supply in the watersheds includes nutrient and mineral water supplies and the amount of water that a water supply takes. Water supplies are used as a source of income or demand. This is a way to reduce the quantity of water that a water supply can get. Water"
+    },
+    {
+      "mode": "raw",
+      "prompt": "Isaac Newton is best known for",
+      "completion": "his work on the subject of gravity. After traveling through the sun nearly 20 degrees, he is able to observe the forces that push the earth apart.\nHe is believed to be the greatest mathematician of his time.\nHe is famous for his \"theory of the mind\".\nHis main idea, however, was to show that gravity can't be determined by the laws of gravity. It"
+    }
+  ]
+}

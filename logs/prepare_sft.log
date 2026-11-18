@@ -1,0 +1,16 @@
+﻿python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+No linha:1 caractere:302
++ ... tch {} } }; & ".\.venv\Scripts\python.exe" "src\prepare_chat.py" --ou ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+destino : data\sft
+fontes  : SmolTalk[smol-magpie-ultra] + SmolTalk[everyday-conversations] + GSM8K
+meta    : 45.00M tokens de treino + 1.50M de validacao
+
+  val: 1.50M tokens
+  shard 0000: 45.00M tokens | total 45.00M | 32s
+
+Pronto: 45.00M tokens em 1 shards (34,629 conversas), 32s

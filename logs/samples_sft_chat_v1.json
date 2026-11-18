@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints\\sft_final.pt",
+  "samples": [
+    {
+      "mode": "chat",
+      "prompt": "What is the capital of France?",
+      "completion": "The capital of France is Paris, a renowned city for its rich traditions, architecture, and lively atmosphere. The capital is Saint-August, France, an historic city with a rich history, architecture, and vibrant architecture that reflects its cultures, history, and geography. It is home to several city-states and city-states, each with its own unique character and culture.\n\nWhen it comes to Paris, Paris is a city with a rich history and rich history. It is known for its rich history, architecture, and lively atmosphere. From the iconic Gothic cathedral to the iconic landmarks of Paris"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Explain photosynthesis in simple terms.",
+      "completion": "Photosynthesis is an essential step in the process of generating new types of energy generated from plant waste. A plant is grown in the leaves of certain plants, such as trees, fruit trees, and insects, to produce energy in the leaves of certain plants.\n\nImagine a plant that has grown into a shape that can convert sunlight into energy. If the plant's growth continues indefinitely, it may be able to generate a significant amount of energy through photosynthesis. For example, if the plant produces a new cell, it may produce a new cell, producing a new cell, and the plant's energy"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Write a short poem about the ocean.",
+      "completion": "The Ocean has a profound resonance with the gentle currents that permeate the atmosphere.\n\nAs the sun casts its shadow above, the beauty of the ocean beckons us deeper into our depths. And the silence that lies beneath the waves is oppressive. It is a gentle melody that weaves of the ocean together to weave a soothing dance of gentle and gentle energy.\n\nThe ocean's gentle resonance stretches out below, like a symphony of tiny, shimmering waves that dance across the shore. It is the deepest level of our life, and its very magic is not lost forever."
+    },
+    {
+      "mode": "chat",
+      "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+      "completion": "There are 7 * 7 = <<7*7=90>>90 apples on a second day.\nSo, there are 90 + 70 = <<90+70=90>>90 apples on the other three days.\nA resposta e: 92"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Give me three tips to study more effectively.",
+      "completion": "When it comes to studying more effectively, it's essential to approach the study with a critical eye and a willingness to engage with and engage with your audience. Here are a few tips that can help:\n\nWhen exploring new resources, such as educational resources, courses, and resources, you can gain a deeper understanding of the material and its relevance to the topic. Try to dig deeper into specific topics, including industry trends, industry trends, and scientific articles, to gain a deeper understanding of the subject matter.\n\nOne effective way to approach this is to look beyond the specific area you've covered"
+    }
+  ]
+}

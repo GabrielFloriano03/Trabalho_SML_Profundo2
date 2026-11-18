@@ -1,0 +1,15 @@
+# PyTorch com CUDA 12.8 (instalar primeiro, pelo indice oficial):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch>=2.5
+numpy<3
+datasets
+tiktoken
+tokenizers
+transformers
+huggingface_hub
+tqdm
+matplotlib
+streamlit
+# so para gerar os slides (src/build_deck.py), fora do pipeline de treino:
+python-pptx
+pillow

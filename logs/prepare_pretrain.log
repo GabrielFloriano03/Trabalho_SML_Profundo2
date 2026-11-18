@@ -1,0 +1,32 @@
+﻿python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+No linha:1 caractere:302
++ ... tch {} } }; & ".\.venv\Scripts\python.exe" "src\prepare_pretrain.py"  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+corpus   : HuggingFaceFW/fineweb-edu [sample-10BT]
+destino  : data\pretrain
+meta     : 1.15B tokens de treino + 5.00M de validacao
+workers  : 10
+
+  val.npy: 5.00M tokens
+  shard 0000: 100.00M tokens -> data\pretrain\train_0000.npy | total 100.00M | 20s
+  shard 0001: 100.00M tokens -> data\pretrain\train_0001.npy | total 200.00M | 40s
+  shard 0002: 100.00M tokens -> data\pretrain\train_0002.npy | total 300.00M | 55s
+  shard 0003: 100.00M tokens -> data\pretrain\train_0003.npy | total 400.00M | 70s
+  shard 0004: 100.00M tokens -> data\pretrain\train_0004.npy | total 500.00M | 83s
+  shard 0005: 100.00M tokens -> data\pretrain\train_0005.npy | total 600.00M | 95s
+  shard 0006: 100.00M tokens -> data\pretrain\train_0006.npy | total 700.00M | 112s
+  shard 0007: 100.00M tokens -> data\pretrain\train_0007.npy | total 800.00M | 136s
+  shard 0008: 100.00M tokens -> data\pretrain\train_0008.npy | total 900.00M | 158s
+  shard 0009: 100.00M tokens -> data\pretrain\train_0009.npy | total 1.00B | 174s
+  shard 0010: 100.00M tokens -> data\pretrain\train_0010.npy | total 1.10B | 189s
+  shard 0011: 50.01M tokens -> data\pretrain\train_0011.npy | total 1.15B | 196s
+
+Pronto: 1.15B tokens de treino em 12 shards, 196s
+'[WinError 10038] Foi tentada uma operação em algum item que não é um soquete' thrown while requesting GET https://hugg
+ingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/001_00000.pa
+rquet
+Retrying in 1s [Retry 1/5].

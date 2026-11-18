@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+
+# dados tokenizados e checkpoints vao para HF Hub / Drive, nao para o git
+data/
+checkpoints/
+
+setup_env.log
+.cache/
+
+# colinha pessoal da apresentacao, nao e entregavel
+Colinha.md
+
+# config do app Claude Code, nao faz parte da entrega
+.claude/

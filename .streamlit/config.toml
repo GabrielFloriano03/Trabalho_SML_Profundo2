@@ -1,0 +1,15 @@
+# Tema da demo (src/chat_app.py). As cores sao as mesmas da apresentacao:
+# carvao como fundo e ambar como acento.
+[theme]
+base = "dark"
+primaryColor = "#E08A2E"
+backgroundColor = "#0E1013"
+secondaryBackgroundColor = "#171A1F"
+textColor = "#E7E9EC"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"

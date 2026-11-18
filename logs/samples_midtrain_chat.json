@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints\\midtrain_final.pt",
+  "samples": [
+    {
+      "mode": "chat",
+      "prompt": "What is the capital of France?",
+      "completion": "The capital of France is Paris, which is the largest city in the world with a population of around 35,000 people. The main leg of the city is Saint Anne, known for its vibrant cities like Montmartro, Rome, and the Colosseum."
+    },
+    {
+      "mode": "chat",
+      "prompt": "Explain photosynthesis in simple terms.",
+      "completion": "Photosynthesis is a crucial process that occurs in the light of the Sun's energy and nutrients, primarily glucose and oxygen. It is a process that involves the growth of cells that are active during the day, but it does not directly consume glucose.\n\nHere's a complete explanation of how photosynthesis works:\n\n1. The light is present in the chloroplasts of the chloroplasts.\n2. A light is produced by the light of the chloroplasts.\n\n3. There is an important connection between light and glucose, as glucose and glucose supply a range of glucose"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Write a short poem about the ocean.",
+      "completion": "\"The ocean is life, and the waves are the only sounds. The waves are the only sound. The ocean is still alive, and the tides are the just the sounds that make it alive. The waves are the only sounds, though. The water's always just the rhythm of the waves, the currents and the waves. The waves are the only sounds of life, not just the sense of movement, but the sound of the tides, the rhythms of the tides, and the secrets that lie within. The ocean's silence is the only sound, and the waves are the only sounds that make"
+    },
+    {
+      "mode": "chat",
+      "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+      "completion": "There are 3 apples and buy 3 more, so they can add up to 10. \n\nIt's possible that you have 3 apples and buy 7 more, so each of the three apples is not the largest."
+    },
+    {
+      "mode": "chat",
+      "prompt": "Give me three tips to study more effectively.",
+      "completion": "Studying more effectively can be a challenge with several types of studies, including:\n\n1. **Continuous research**: Study on a continuous variable (such as a variable, variables, or sample) and study on multiple metrics can help establish a strong foundation for further analysis. Additionally, studies on a population can be more efficient than studying on a single variable, especially for large populations.\n\n2. **Use time series analysis**: Study on a continuous variable (such as a variable, variables, or a sample) can help identify patterns, trends, and correlations in the data to"
+    }
+  ]
+}

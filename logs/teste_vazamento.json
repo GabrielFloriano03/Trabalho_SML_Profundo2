@@ -1,0 +1,274 @@
+{
+  "v1 (dados sujos)": {
+    "checkpoint": "checkpoints\\sft_final_v1.pt",
+    "amostras": 32,
+    "anotacoes_calculadora": 54,
+    "marcador_portugues": 16,
+    "textos": [
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "If you have 3 apples and you want to find out how many apples are in each of the three fruits, you can divide the number of apples by the number of apples and add them up to create a detailed equation.\n\nThe number of apples we have is 5. The number of apples we have is also 5."
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "If I have 3 apples and buy 7 more than 3 times, and you have 2 apples and 2 apples, how many of you have is 3?\n\nYou have 4 apples and 2 apples, so you have 5 * 2 = <<5*2=6>>6 apples.\n\nYou have 2 apples and 2 apples, so you have 6 * 2 = <<6*2=12>>12 apples.\n\nThat means you have 6 * 3 = <<6*3=36>>36 apples.\nSo, you have 36 - 12 = <<36-12=36>>36 apples.\nSo, you have 36 - 36 = <<36-12=8>>8"
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "1 cup of water equals 4/2=<<4/2=4>>4 fruits\nSo when 1 cup of water is divided by 3, the fruit (which is 3-4-4-4) would be:\n4+4-4-4-5-4-2-3-1-3-1-2\nTherefore, I have 3+5+4+4+4+4+4+4+4 + 5+3+4+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5+5"
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "With 3 apples and each of them buys 7 apples + 7 apples + 7 apples = <<7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+7+"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 90 / 0.50 = <<20/0.5=0>>0.5 clips in April.\nHer total is 20 video clips in May.\nSo, she sold 20 - 20 = <<20-20=10>>10 clips in May.\nA resposta e: 10"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 clips in April.\nSo she sold 20 - 20 = <<20-20=20>>20 clips in May.\nAnd she sold 20 - 20 = <<20-20=25>>25 videos in May.\nSo she sold 25 - 20 = <<25-20=5>>5 videos in May.\nTherefore she sold 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 30.\nA resposta e: 30"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 videos for 20 clips in April + 20 videos = <<20+20=20>>20 videos\nThe cost of the video is 20 - 20/20 = <<20-20/20=5>>5\nThere are 8 video clips in April and one video in May which is worth 5-10%\nA resposta e: 5"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "22 minutes\nJie (50 minutes) - 25 minutes = <<50*25=600>>600\nJie sold 1000 in May.\nJie sold 1000 in May.\nJie sold 200 in May.\nJie sold 1600 in May.\nJie sold 1800 in May.\nJie sold 1500 in May.\nJie sold 1300 in May.\nJie sold 1800 in May.\nJie sold 2500 in May.\nJie sold 3000 in May.\nJie sold 1500 in May.\nJie sold 1500 in May.\nJie sold 1500 in May.\nJie sold 1500 in May.\nJie sold 1600 in May"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost, we need to multiply the price of the author's book by the cost of the book. Since the book costs $12, we subtract the cost of the book from the total cost. \n\nSo, 5 books cost 2 * $12 = $<<2*12=12>>12.\nSo, 5 books cost 6 + 2 = $<<6+2=6>>6.\nSo, 5 books cost 2 * $12 = $<<2*12=6>>6.\nA resposta e: 6"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost of 5 books, 5 books, or 100 percent, we need to divide the cost of 5 books by the cost of 5 books. \n\nThere are 5 books left in the book. This gives us a total of 5 * 5 = $<<5*5=15>>15.\n\nIf we subtract 5 books from the total cost of 5, we reach 5 + 5 = 25.\n\nSo, the cost of 5 books is $12.\n\nTherefore, the cost of 5 books is $12 + $12 = $<<12+12=10>>10.\n\nA resposta e: 10"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find how much 5 books cost, we can use the formula:\n\nNumber of books * Cost of 5 books per book = $12\nNumber of books * Cost of 5 books = $12\nLet's divide the number of books by 5:\n12/5 = $<<12/5=12>>12.\n2. Simplify the equation:\n12/5 = $12/5\nSolve for $c = $12/5. This gives us the number of books. \n12/5 = $12/5.\nThe answer is: 12/5."
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost of 5 books, we need to consider the total cost of the book. Since we have 4 books, 5 books, and 5 books, we can set up a process to find the cost of the 5 books. \n\nFirst, let's calculate the total cost of the book. Since there are 4 books (three times the cost), 5 books (three times the cost), and 6 books (three times the cost), we can set up the equation: 2 * (4 * 3 * 6)/4 = 4 * (6 * 6)/16 = 10.\n\nSo, if we find the cost of 5 books together, the book costs 10 +"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "To solve this problem, we need to determine the distance traveled by each point on the run. The distance traveled by Tom is 3 miles x 5 miles = <<3*5=30>>30 miles.\nThe distance traveled by Tom is 5 miles + 30 miles = <<5+30=30>>30 miles.\nTherefore, Tom ran 30 -30 = <<30-30=90>>90 miles.\nA resposta e: 90"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3 miles a day and then 6 miles a day and then 5 days = <<3*3=12>>12 miles a day.\nAfter that time Tom runs a total of 12 miles, so he ran 12 * 6 = <<12*6=16>>16 miles a day.\nFor the second day Tom ran a total of 12 + 12 = <<12+12=13>>13 miles a day.\nA resposta e: 13"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3*7=<<3*7=13>>13 miles a day.\nSo, Tom ran 13*2=<<13*2=24>>24 miles a day.\nBut he ran 3*24=<<3*24=24>>24 miles a day.\nSo, Tom ran 12*24=<<12*24=26>>26 miles a day.\nA resposta e: 26"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3 * 7 = <<3*7=46>>46 miles\nHe ran 4 * 5 = <<4*5=55>>55 miles\nSo that means Tom and Tom ran 4 + 55 = <<4+55=54>>54 miles\nA resposta e: 54"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "If 1/3 leave is 24/5, we know that 6/3! = <<24/5=2>>2 remain.\nSo, 6 / 3 = <<6/3=4>>4 remain.\nTherefore, there are 4 remain.\nA resposta e: 4"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "To find the remaining students, we need to find the minimum number of remain for each and then subtract the smallest of two equal parts. However, since we're given a variable of 12, we can calculate the difference:\n\n1/3 - 24 = 2\n\nSo, the remaining students are 24-24 = 120.\n\nSo, we need to find the maximum number of remain (24) for each of the 18 students, which is 3.\n\nTherefore, the remaining students are 24 - 12 = 9."
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "1/3 leave\nTherefore, the number of remain is 24/5 = <<24/5=7>>7.\nTherefore, the number of remain is 7/7 = <<7/7=9>>9.\nA resposta e: 9"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "1/3 leave, so every additional hour of progress is at 1/3*24 = <<3*2=5>>5.\nSince there are 6 students in the class, there are 6*24 = <<6*24=240>>240 remaining remaining.\nSo in 24-24 = <<24-24=24>>24 remain, there are 240 remaining remaining remaining.\nA resposta e: 24"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To solve the problem, let's consider the following problem. Instead of finding the number of terms in a given string, we can use the Remainder Theorem to find the number of terms in a given string. We can write the first term as 'k' and the number of terms, 'b' and 'c' as integers, to simplify the calculation.\n\nLet's start with 'k'. We can write the first term as 'k' and the number of terms, 'b' and 'c'. We can write 'm' as 'k' and 'c' as 'c'. The number of terms in 'n' is equal to 'c' and the"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To find 15 plus 27, we'll use the factor formula for the expression:\n\n15 plus 27 - 5 = 15 - 27\n\nNow we can plug this value back into the expression:\n\n15 plus 27 - 5 = 15 - 28\n\nTherefore, 15 + 28 = 15 - 28\n\nSo, 15 equals 15.\n\nTherefore, 15 plus 27 = 15 - 32\n\nNow, we'll find 15 plus 27 in terms of 15 to find 15 terms."
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To find 15 plus 27, we can subtract 27 from both sides of the equation: \n15 + 27 = 15\n\nSo 15 plus 27 is 5."
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To find 15 plus 27, we can add 17 to both sides of the equation 2*15 = 15 + 17 = 7. This yields: 7 * 17 = 7.\n\nFinally, we need to find 35 and 7. This tells us that 35 + 21 = 5. This means that there are 12 possible values of 5, and one value is the value that is less than or equal to 3.\n\nSo, the 15 plus 27 is 5. Let's calculate the result: 5 + 3 - 3 = 5. We can rewrite the equation as 5 - 3 = 3, which gives us 5 + 3 - 3 = 5.\n\nSo, 15 plus 27 equals 7"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "Sarah has 5 x 8 = <<5*8=12>>12 pencils.\nSo, she has 12 x 2x + 8 = <<12*2=20>>20 pencils.\nA resposta e: 20"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "If Sarah has 5 x 8 = <<5*8=20>>20 pencils, then she has 5 x 8 = <<5*8=40>>40 pencils.\nA resposta e: 40"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "There are 6 x 8 = <<6*8=48>>48 pencils in the boxes.\nThere are 48 x 1/3 = <<48*1/3=48>>48 pencils in the boxes.\nA resposta e: 48"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "The number of pencils Sarah has is 5 x 8 = <<5*8=8>>8\nThe number of pencils Sarah has is 8 x 8 = <<8*8=15>>15\nThe number of pencils Sarah has is 15 x 4 = <<15*4=16>>16\nThe number of pencils Sarah has is 20 x 4 = <<20*4=21>>21\nThe number of pencils Sarah has is 22 x 5 = <<22*5=39>>39\nThe number of pencils Sarah has is 41 x 2 = <<41*2=41>>41\nThe number of pencils Sarah has is 41 x 2 = <<41"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To explore the price of a shirt, let's consider the cost of the shirts. Each shirt costs $20, which affects the total amount of money the shirt would sell. \n\nIf we assume the price of the shirt is $20 on a fair die, we can set up the following equation:\n\n20 * $20 * 100 = $40\n\nSubtract 100 from the equation to isolate the cost:\n\n50 - $40 = $40\n\nTo isolate the cost of the pants, we subtract 100 from both sides of the equation:\n\n50 - $40 = $40\n\nNow, let's use the cost of the pants to find the"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To solve this problem, let's consider the price of the shirt, which is 15 cents. The price of the shirt, which is 15 cents, is a positive integer. This is because, for any individual shirt, the person selling the shirt has a higher price to offset the price of the shirt.\n\nHowever, the number of cents for 5 cents is still a positive integer. To calculate the price, we can start by recognizing that 5 cents is the most frequently-used value because it's the most common value in a product. This has a direct impact on purchasing and purchasing decisions.\n\nLet's consider the price of the shirt as 25 cents. If 5 cents are worth $"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To find the final price, we need to calculate the cost of the new shirt and the discount by subtracting this number from the total cost. \n\nHowever, this will give us the final price because we have $20.00 (25% discount) and some additional expenses, so we need to multiply the cost of the new shirt to find the cost of the new shirt.\n\nAnother way to find the final price is to calculate the discount by subtracting the cost of the new shirt. Since the new shirt costs $20, the discount is $20.00 (40% discount), indicating that the new shirt is $30.00.\n\nIf we subtract the cost"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "$20 = $<<20*20=400>>400\nThis is the final price that's worth it from the second order.\nSo, you can make $400 in dollars in the second order to find the final price on the second order.\nSo, you want to calculate the final price for each pair of pants for the first two order.\nSo, the final price you choose is 400 / $20 = $<<400/20=2>>2.\nSo, you are looking at the final price from the second order to find the final price.\nA resposta e: 2"
+      }
+    ]
+  },
+  "v2 (dados limpos)": {
+    "checkpoint": "checkpoints\\sft_final.pt",
+    "amostras": 32,
+    "anotacoes_calculadora": 0,
+    "marcador_portugues": 0,
+    "textos": [
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "If you have 3 apples and you want to find out how many apples are in each of the three fruits, you can divide the number of apples by the number of apples and add them up to create a detailed equation.\n\nThe number of apples we have is 5. The answer is: 5."
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "If I have 3 apples and buy 7 more than 3 times that, then each fruit will be sold to my local farmer, with a total of 7 + 1 = 10 apples.\nThe total number of apples is 10 + 1 = 40.\nThe answer is: 40"
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "1 cup of water equals 4/2=1 brown\nSo, I have 2*2=3 brown apples\nThe answer is: 3"
+      },
+      {
+        "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+        "resposta": "For 3 apples, each of the 3 apples has x 3 = 6 apples.\nFor 7 apples, each of the 3 apples has 11 x 3 = 12 apples.\nThe answer is: 12"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 90/100\nSo in May, she sold 20 + 60 = 240\nSo in May, Natalia sold 20 x 60 = 120.\nThe answer is: 120"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 clips in April.\nSo she sold 20 - 20 = 20 clips\nSo she sold 20 - 20 = 20 clips\nThe answer is: 20"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "Natalia sold 20 videos for 20 clips in April + 20 videos = 40 videos\nA total of 20 videos = 40 videos\nSince she sold 20 videos in May, she sold 40 videos for 80 videos\nSince she sold 80 videos for 80 videos for 20 videos, she sold 80 videos for 80 videos in May = 80 videos\nThe answer is: 80"
+      },
+      {
+        "prompt": "Natalia sold 20 clips in April and half as many in May. How many in total?",
+        "resposta": "22 minutes\nJobius & 27\nJobius & 27\nJobius & 25\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27\nJobius & 27"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost, we need to multiply the price of the author's book by the cost of the book. Since the book costs $12, we subtract the cost of the book from the total cost. \n\nSo, 5 books cost 36 - $12 = $12. \n\nSo, 5 books cost 6 + 13 = $22.\n\nTherefore, 5 books cost $22.\n\nThis means the book costs $22 + $22 = $27.\n\nTo find the cost, we subtract the cost of the book from the total cost. \n\nSo, 5 books cost $22 + $27 = $26.\n\nSo, 5"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost of 5 books, we need to consider the total cost of the book and the cost of the book. Since each book costs $12, we need to subtract the cost of the book from the total cost of the book.\n\nTo find the price of the book, we subtract the cost of the book from the total cost of the book. This gives us 1/6 of the cost of the book.\n\nTherefore, 5 books is worth $12."
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "5 books cost $12.\nSo, 5 books cost $12 + 1 dollar = $12.\nSo, 5 books cost $12 + 1 dollar = $12.\nThe answer is: 12"
+      },
+      {
+        "prompt": "A book costs $12. How much do 5 books cost?",
+        "resposta": "To find the cost of 5 books, we need to consider the total cost of the book. Since we have 4 books, 5 books, and 5 books, we can set up a process to find the cost of 5 books. \n\nGiven that 5 books cost $12, we can calculate the total cost of the book plus the cost of the book. \n\nThe total cost of 5 books is the sum of the books cost of the book, including all the books. For the book, the total cost is 5 + 5 + 5 + 5 = 11. \n\nThe total cost of the books is the sum of the books cost plus the cost of the book, minus"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 8 * 7 = 8 miles per day\nTom ran 3 * 8 = 8 miles per day\nTom ran 8 * 4 = 8 miles\nTom ran 9 * 8 = 8 miles\n\nIf Tom ran 1 mile per day, then Tom had 8 * 8 = 9 miles per day\nThe answer is: 9"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3 miles a day and then 6 miles a day and then 5 days = 9 miles a day.\nHis running time is 9 days + 9 days = 9 days.\nSo he running 12 miles a day and 12 days + 9 days = 11 miles a day.\nSo he running 11 miles a day + 11 miles a day + 11 miles = 11 miles a day.\nThe answer is: 11"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3*7=45 miles per day for 8 days.\nSo Tom ran 1*800=32 miles in total.\nHe ran 3*30=32 miles per day for 7 days and 8 days for 8 days.\nSo he worked 2*8=16 hours of work.\nThe answer is: 16"
+      },
+      {
+        "prompt": "Tom runs 3 miles a day for 7 days. How far did he run?",
+        "resposta": "Tom ran 3 miles a day.\nSo far, he ran 3 + 1 = 15 miles.\nSo, he ran 5*15 = 54 miles.\nSo, Tom and Tom ran 4 miles a day.\nThe answer is: 54"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "If 1/3 leave is 24/5, we know that 6/3! is equal to 1/3! (24/5!) = -8.\nSo we have 24 + 6 + 6 = 24.\nTherefore, there are 24 remaining students.\nThe answer is: 24"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "If 1/3 leave, then 1/3 will leave 2*2 = 2*2 = 12\nThe answer is: 12"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "1/3 leave\nTherefore, the number of students who leave is 24\nA more than 3/5 leave is 25\nTherefore, the number of remain is 25\nWe can find this value by subtracting the remaining 50\nNow that there is a term to the above equation, we can solve for the value of the original number.\nThe answer is: 25"
+      },
+      {
+        "prompt": "There are 24 students. If 1/3 leave, how many remain?",
+        "resposta": "1/3 leave, so every additional hour of progress is at 1/3*24 = 1/3*24 = 6\nThe answer is: 6"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To solve the problem, let's consider the following problem. Instead of finding the number of terms in a given string, we can use the Remainder Theorem to find the number of terms in a given string. We can write the first term as 'k' and the number of terms, 'b' and 'c' as integers, to simplify the calculation.\n\nWe can express 'n' as 'a.d' and 'b'. Then, we can use the Remainder Theorem to find the number of terms in a given string. Let's choose 'a' and 'b' from 'c'. Then, we can substitute 'a' and 'b' into"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "15 equals 7 plus 17 plus 36.\nTherefore, 15 plus 3 is equivalent to 7 plus 40 plus 42 plus 3 is 28 plus 2 is 12 plus 42 plus 3 is 4 minus 2 is 12 plus 3 is 4 plus 3 is 12 minus 3 is 3 plus 3 is 12 plus 3 is 12 plus 3 is 12 plus 3 is 12 plus 4 is 24 plus 3 is 18 plus 3 is 24 plus 3 is 24 plus 3 is 24 plus 3 is 24 plus 3 is 24 plus 6 is 24 plus 3 is 24 plus 3 is 24 plus 3 is 12 plus 3 is 24 plus 3 is 12 plus 3 is 12 plus 3 is 12 plus 3 is 6 plus 3 is 24 plus 3 is 12"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To find 15 plus 27, we need to subtract 27 from the rest of the answer, which is 15.\n\n35 plus 25 is 25 plus 27 minus 30.\n\nSo, 15 plus 27 is 55 minus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus 30 plus"
+      },
+      {
+        "prompt": "What is 15 plus 27?",
+        "resposta": "To find 15 plus 27, we can add 17 to both sides of the equation 2*15 = 15 + 17 = 7.\nSo, 15 * 27 = 7.\nSo, 15 * 27 = 16.\nThe answer is: 16"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "Sarah has 5 x 8 = 6 pencils.\nShe has 5 x 4 = 6 pencils.\nThe answer is: 6"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "If Sarah has 5 x 8 = 8 pencils, then each rectangle has 8 x 5 = 40 pencils.\nThe total number of pencils that is used to fill a box is 40 x 7 = 14 pencils.\nThe answer is: 14"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "There are 6! = 8 pencils in total.\nThere are 8+8 = 32 pencils in total.\nThere are 32-32 = 32 pencils in total.\nThe answer is: 32"
+      },
+      {
+        "prompt": "Sarah has 5 boxes with 8 pencils each. How many pencils?",
+        "resposta": "The number of pencils Sarah has is 5 x 8 = 10 pencils.\nTherefore, Sarah has 6 pencils with the same amount of pencils.\nThe answer is: 10"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To explore the price of a shirt, let's consider the cost of the shirts. Each shirt costs $20, which affects the total amount of money the shirt would sell. \n\nIf we assume the price of the shirt is $20 on a fair die, we can set up the following equation:\n\n20 * $20 * 100 = $40\n\nSubtract 100 from the equation to find the final price:\n\n50 * $40 = $40\n\nTherefore, the final price of the shirt is $20.\n\nSince we know the price of the shirt is $20, we can set the price of the shirt to 8 cents. This is equal"
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To solve this problem, let's consider the price of the shirt, which is 15 cents. The price of the shirt, which is 15 cents, is a positive integer. This is because, for any individual shirt, the person selling the shirt has a higher price to offset the price of the shirt.\n\nHowever, the number of cents for 5 cents is still $20, so the total cost of the shirt is 15 cents + $20 = 60 cents. On average, the person selling 15 cents is 60 cents + 5 cents = $7, which is a significant reduction in price.\n\nSo, the final price of the shirt is $7 + $7 = $100."
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "To find the final price, we need to calculate the cost of the new shirt and the discount by subtracting this number from the total cost. \n\nHowever, this will give us the final price because we have $20.00 (25% discount) and $20.00. To find the final price, we divide the total cost by the discount: $20.00 / $20.00 = $15.00.\n\nSo, we get the final price: $15.00 x $15.00 = $15.00.\n\nSo, the final price that suits the shirt is $15.00 and the discount is $15.00."
+      },
+      {
+        "prompt": "A shirt costs $20 with a 25% discount. What is the final price?",
+        "resposta": "$20 = $10\nThe answer is: 10"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints\\sft_final.pt",
+  "samples": [
+    {
+      "mode": "chat",
+      "prompt": "What is the capital of France?",
+      "completion": "The capital of France is Paris, the capital of France. It is the world's greatest city, and the capital is Saint-Auguste. The capital is Saint-Auguste, the capital of France.\n\nThe capital of France is Paris, the capital of France. The capital is Paris, and the capital is Saint-Auguste. The capital is Saint-Auguste, the capital is Mont-Dame.\n\nThe capital is Saint-Auguste, the capital is Saint-Auguste. The capital is Saint-Auguste, the capital is Saint-Auguste."
+    },
+    {
+      "mode": "chat",
+      "prompt": "Explain photosynthesis in simple terms.",
+      "completion": "Photosynthesis is an essential step in the process of generating new types of energy generated from plant waste. A plant is grown in the leaves of certain plants, such as trees, fruit trees, and insects, to produce energy in the leaves of certain plants.\n\nImagine a plant that has grown into a shape that can convert sunlight into energy. If the plant's growth continues indefinitely, it may be able to generate a significant amount of energy through photosynthesis. For example, if the plant produces a new cell, it may produce a significant amount of energy, which may not directly produce a significant amount"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Write a short poem about the ocean.",
+      "completion": "The ocean has a profound resonance with the gentle currents that permeate the atmosphere.\n\nAs the sun casts its shadow above, the waves pulsate, casting an eerie glow on the shore. And the silence that envelops the waves is oppressive. It is a gentle melody that can be heard or heard.\n\nWhen the waves dance, and the waves dance, the waves begin to dance and dance in harmony. It is a dance that is both spiritual and spiritual, imbued with the essence of the natural world.\n\nAs the waves dance, the waves dance, and they dance together"
+    },
+    {
+      "mode": "chat",
+      "prompt": "If I have 3 apples and buy 7 more, how many do I have?",
+      "completion": "There are 7 * 7 = 20 apples.\nThe number of apples is 20.\nThe answer is: 20"
+    },
+    {
+      "mode": "chat",
+      "prompt": "Give me three tips to study more effectively.",
+      "completion": "To study more effectively, try to practice practice regularly. Practice positive affirmations and reframing your practice as positive affirmative moments. Take some time to relax, recharge, and unwind, as this will help you fall asleep. Don't be afraid to try new things – try new things during your nap.\n\nYou can also try to be quiet on your own. This can be as simple as focusing on your own notes, discussing your thoughts, and practicing simple self-talk. Be quiet in your thoughts and focus on the present moment, or if you're letting go of the past"
+    }
+  ]
+}
